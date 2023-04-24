@@ -50,5 +50,6 @@ export default defineConfig((env) => {
         ignoreTryCatch: false,
       },
     },
+    base: './',
   }
 })

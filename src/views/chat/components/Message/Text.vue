@@ -73,7 +73,7 @@ defineExpose({ textRef })
       </div>
       <div v-else class="whitespace-pre-wrap" v-text="text" />
       <template v-if="loading">
-        <span class="dark:text-white w-[4px] h-[20px] block animate-blink" />
+        <text class="dark:text-white w-[4px] h-[20px] block animate-blink" />
       </template>
     </div>
   </div>

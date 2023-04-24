@@ -12,6 +12,7 @@ function goHome() {
 <template>
   <div class="flex h-full">
     <div class="px-4 m-auto space-y-4 text-center max-[400px]">
+      {{ $route }}
       <h1 class="text-4xl text-slate-800 dark:text-neutral-200">
         Sorry, page not found!
       </h1>
