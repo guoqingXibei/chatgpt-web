@@ -13,6 +13,8 @@
   "scripts": {
     "dev": "vite",
     "build": "run-p type-check build-only",
+    "build-simply": "run-p build-only",
+    "update-openai-source": "rm -rf dist && pnpm build-simply && rm -rf ~/go/src/openai/public/ && mkdir ~/go/src/openai/public &&  cp -r dist/* ~/go/src/openai/public",
     "preview": "vite preview",
     "build-only": "vite build",
     "type-check": "vue-tsc --noEmit",
