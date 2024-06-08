@@ -14,7 +14,7 @@ export function fetchAnswerAPIProcess<T = any>(
   },
 ) {
   return get<T>({
-    url: `reply-stream?msgId=${params.msgId}`,
+    url: `${import.meta.env.VITE_API_PREFIX}/reply-stream?msgId=${params.msgId}`,
     onDownloadProgress: params.onDownloadProgress,
   })
 }
