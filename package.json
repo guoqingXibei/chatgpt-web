@@ -13,7 +13,7 @@
   "scripts": {
     "dev": "vite --mode development",
     "build": "run-p type-check build-only",
-    "update-openai-web": "rm -rf dist && vite build --mode production && rm -rf ~/go/src/openai/public/ && mkdir ~/go/src/openai/public &&  cp -r dist/* ~/go/src/openai/public",
+    "deploy-web": "rm -rf dist && vite build --mode production && ssh root@47.56.184.46 \"rm -rf ~/answer/*\" && scp -r dist/* root@47.56.184.46:/root/answer/",
     "preview": "vite preview",
     "type-check": "vue-tsc --noEmit",
     "lint": "eslint .",

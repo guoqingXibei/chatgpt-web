@@ -70,6 +70,6 @@ export default defineConfig((env) => {
         },
       },
     },
-    base: './',
+    base: '/answer/',
   }
 })
