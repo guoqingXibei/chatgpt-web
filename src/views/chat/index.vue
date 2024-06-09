@@ -21,6 +21,16 @@ const loading = ref<boolean>(true)
 
 const route = useRoute()
 
+function getHashParam(key: string) {
+  const hash = window.location.hash
+  if (hash.length <= 2)
+    return
+
+  const searchStr = hash.substring(2)
+  const params = new URLSearchParams(searchStr)
+  return params.get(key)
+}
+
 async function displayAnswer() {
   controller = new AbortController()
   scrollToBottom()
@@ -32,7 +42,7 @@ async function displayAnswer() {
           const { responseText } = xhr
           reply.value = responseText
         },
-        msgId: `${route.query.msgId}`,
+        msgId: `${route.query.msgId || getHashParam('msgId')}`,
       })
     }
     await fetchChatAPIOnce()
